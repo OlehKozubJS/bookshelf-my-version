@@ -22,7 +22,7 @@ popupModalCloseButton.addEventListener("click", closePopupModal);
 async function openPopupModal(event) {
   event.preventDefault();
   try {
-    bookData = await getBookInfo(event.target.dataset.id);
+    bookData = await getBookInfo(event.target.parentNode.dataset.id);
     popupModalBackground.classList.replace("hidden", "visible");
     bookImage.setAttribute("src", bookData.book_image);
     bookImage.setAttribute("alt", bookData.title);
