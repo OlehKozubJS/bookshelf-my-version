@@ -1,39 +1,47 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookshelf</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/index.css" />
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
-    <div class="section">
-      <div class="container">
-        <a href="./shopping-list.html"
-          >go to shopping list (я временный линк перехода в корзину)</a
-        >
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section class="section">
+    <div class="">
+      <div class="js-books"></div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="popup-modal-background hidden">
+        <div class="popup-modal">
+          <button class="popup-modal-close-button" type="button">
+            <svg>
+              <use href="../images/sprite.svg#icon-x-close"></use>
+            </svg>
+          </button>
+          <img class="book-image" src="" alt="">
+          <div class="book-information">
+            <h3 class="book-title"></h3>
+            <h4 class="book-author"></h4>
+            <p class="book-description"></p>
+            <div class="book-store-links">
+              <a class="amazon-link" href="" target="_self">
+                <img srcset="../images/amazon-1x-min.png 1x, ../images/amazon-2x-min.png 2x" src="../images/amazon-1x-min.png" alt="Amazon Logo">
+              </a>
+              <a class="bookshop-link" href="" target="_self">
+                <img srcset="../images/bookshop-1x-min.png 1x, ../images/bookshop-2x-min.png 2x" src="../images/bookshop-1x-min.png" alt="Bookshop Logo">
+              </a>
+              <a  class="openbook-link" href="" target="_self">
+                <img srcset="../images/openbook-1x-min.png 1x, ../images/openbook-2x-min.png 2x" src="../images/openbook-1x-min.png" alt="Openbook Logo">
+              </a>
+            </div>
+          </div>
+          <button class="add-to-list-button" type="button">ADD TO SHOPING LIST</button>
+        </div>
       </div>
     </div>
-    <div>
-      <include src="./partials/header.html"></include>
-      <include src="./partials/modal-menu.html"></include>
-    </div>
-
-    <div class="page container">
-      <div class="side-bar">
-        <include src="./partials/all-categories.html"></include>
-        <include src="./partials/support.html"></include>
-      </div>
-      <include src="./partials/all-books.html"></include>
-    </div>
-
-    <include src="./partials/pop-up.html"></include>
-  </body>
+  </section>
+</body>
 </html>
