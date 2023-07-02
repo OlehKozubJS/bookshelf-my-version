@@ -1,0 +1,2 @@
+.section{padding-top:40px}.container{outline:1px solid tomato;margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px}@media screen and (min-width:375px){.container{width:375px}}@media screen and (min-width:768px){.container{width:768px;padding-left:32px;padding-right:32px}.side-bar{gap:32px;display:flex}}@media screen and (min-width:1440px){.container{width:1440px;padding-left:24px;padding-right:24px}.page{gap:40px;display:flex}.side-bar{flex-direction:column;gap:86px;display:flex}}
+/*# sourceMappingURL=index.7f2d0333.css.map */
