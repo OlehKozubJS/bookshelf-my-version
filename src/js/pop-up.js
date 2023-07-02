@@ -20,6 +20,7 @@ async function openPopupModal(event) {
   event.preventDefault();
   try {
     bookData = await getBookInfo(event.target.dataset.id);
+    console.log(event.target.dataset.id);
     popupModalBackground.classList.replace("hidden", "visible");
     bookImage.setAttribute("src", bookData.book_image);
     bookImage.setAttribute("alt", bookData.title);
@@ -50,7 +51,9 @@ function closePopupModal() {
 
 
 async function getBookInfo(bookId) {
-  return await axios.get(`https://books-backend.p.goit.global/books/${bookId}`).data;
+  const response = await axios.get(`https://books-backend.p.goit.global/books/${bookId}`);
+  console.log(response);
+  return response.data;
 }
 
 

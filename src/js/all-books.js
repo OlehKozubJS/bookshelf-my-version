@@ -47,10 +47,10 @@ async function addMarkupTopBooks() {
         let itemBook = '';
         for (let i = 0; i < countColumn; i += 1) {
           itemBook += `
-        <li class="book-item"><a href="#" data-id="${books[i]._id}">
-        <img src="${books[i].book_image}" alt="${books[i].title}">
+        <li class="book-item">
+        <img src="${books[i].book_image}" alt="${books[i].title}" data-id="${books[i]._id}">
         <p class="book-title">${books[i].title}</p>
-        <p class="book-title">${books[i].author}</p></a>
+        <p class="book-title">${books[i].author}</p>
         </li>
         `;
         }
