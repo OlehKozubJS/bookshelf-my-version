@@ -46,10 +46,11 @@ async function addMarkupTopBooks() {
         const title = `<h3 class="topbook-title">${list_name}</h3><ul class="topbooks-list">`;
         let itemBook = '';
         for (let i = 0; i < countColumn; i += 1) {
-          itemBook += `<li class="book-item">
+          itemBook += `
+        <li class="book-item"><a href="#" data-id="${books[i]._id}">
         <img src="${books[i].book_image}" alt="${books[i].title}">
         <p class="book-title">${books[i].title}</p>
-        <p class="book-title">${books[i].author}</p>
+        <p class="book-title">${books[i].author}</p></a>
         </li>
         `;
         }
@@ -69,7 +70,7 @@ async function addMarkupTopBooks() {
 
 addMarkupTopBooks()
   .then(markUp => {
-    console.log(markUp);
+    document.querySelector(".js-books").innerHTML = markUp;
   })
   .catch(error => {
     Notify.failure(error.message);
