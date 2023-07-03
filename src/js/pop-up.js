@@ -13,7 +13,7 @@ const bookshopLink = document.querySelector(".bookshop-link");
 const openbookLink = document.querySelector(".openbook-link");
 
 let bookData;
-let bookShopingList = [];
+let bookShopingList = JSON.parse(localStorage.getItem("bookShopingListLS")) || [];
 
 jsBooks.addEventListener("click", openPopupModal);
 popupModalCloseButton.addEventListener("click", closePopupModal);
@@ -56,6 +56,7 @@ async function getBookInfo(bookId) {
 
 
 function bookPresenseCheck() {
+  console.log(bookShopingList);
   if (bookShopingList.some((book) => book._id === bookData._id)) {
     addToListButton.removeEventListener("click", addToListFunction);
     addToListButton.addEventListener("click", removeFromListFunction);
@@ -66,13 +67,13 @@ function bookPresenseCheck() {
     addToListButton.addEventListener("click", addToListFunction);
     addToListButton.textContent = "ADD TO SHOPING LIST";
   }
+  localStorage.setItem("bookShopingListLS", JSON.stringify(bookShopingList));
 }
 
 
 function addToListFunction() {
   console.log("Added!");
   bookShopingList.push(bookData);
-  console.log(bookShopingList);
   bookPresenseCheck();
 }
 
@@ -80,7 +81,6 @@ function addToListFunction() {
 function removeFromListFunction() {
   console.log("Removed!");
   bookShopingList = bookShopingList.filter((book) => book._id !== bookData._id);
-  console.log(bookShopingList);
   bookPresenseCheck();
 }
 
