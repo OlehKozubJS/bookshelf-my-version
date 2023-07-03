@@ -17,6 +17,11 @@ let bookShopingList = JSON.parse(localStorage.getItem("bookShopingListLS")) || [
 
 jsBooks.addEventListener("click", openPopupModal);
 popupModalCloseButton.addEventListener("click", closePopupModal);
+popupModalBackground.addEventListener("click", event => {
+  if (event.target.classList.contains("popup-modal-background")) {
+    closePopupModal();
+  }
+});
 
 
 async function openPopupModal(event) {
