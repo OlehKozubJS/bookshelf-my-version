@@ -31,7 +31,7 @@ async function openPopupModal(event) {
     bookDescription.textContent = bookData.description;
     const amazonURL = bookData.buy_links.find((buyLink) => buyLink.name === "Amazon").url;
     const bookshopURL = bookData.buy_links.find((buyLink) => buyLink.name === "Bookshop").url;
-    const applebooksURL = bookData.buy_links.find((buyLink) => {buyLink.name === "Apple Books";}).url;
+    const applebooksURL = bookData.buy_links.find((buyLink) => buyLink.name === "Apple Books").url;
     amazonLink.setAttribute("href", amazonURL);
     bookshopLink.setAttribute("href", bookshopURL);
     applebooksLink.setAttribute("href", applebooksURL);
