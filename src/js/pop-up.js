@@ -10,7 +10,7 @@ const bookDescription = document.querySelector(".book-description");
 const addToListButton = document.querySelector(".add-to-list-button");
 const amazonLink = document.querySelector(".amazon-link");
 const bookshopLink = document.querySelector(".bookshop-link");
-const openbookLink = document.querySelector(".openbook-link");
+const applebookLink = document.querySelector(".applebook-link");
 
 let bookData;
 let bookShopingList = JSON.parse(localStorage.getItem("bookShopingListLS")) || [];
@@ -31,10 +31,10 @@ async function openPopupModal(event) {
     bookDescription.textContent = bookData.description;
     const amazonURL = bookData.buy_links.find((buyLink) => buyLink.name === "Amazon").url;
     const bookshopURL = bookData.buy_links.find((buyLink) => buyLink.name === "Bookshop").url;
-    //const openbookURL = bookData.buy_links.find((buyLink) => {buyLink.name === "Openbook";}).url;
+    const applebookURL = bookData.buy_links.find((buyLink) => {buyLink.name === "Apple Book";}).url;
     amazonLink.setAttribute("href", amazonURL);
     bookshopLink.setAttribute("href", bookshopURL);
-    //openbookLink.setAttribute("href", openbookURL);
+    applebookLink.setAttribute("href", applebookURL);
     bookPresenseCheck();
 
   }
