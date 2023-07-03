@@ -22,7 +22,11 @@ popupModalBackground.addEventListener("click", event => {
     closePopupModal();
   }
 });
-
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closePopupModal();
+  }
+});
 
 async function openPopupModal(event) {
   event.preventDefault();
