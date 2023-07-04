@@ -31,6 +31,7 @@ document.addEventListener("keydown", event => {
 
 async function openPopupModal(event) {
   event.preventDefault();
+  //if (!event.target.parentNode.hasAttribute("data-bookid")) return;
   try {
     bookData = await getBookInfo(event.target.parentNode.dataset.bookid);
     popupModalBackground.classList.replace("hidden", "visible");
